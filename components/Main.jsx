@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import {Text, View} from 'react-native';
-import { WebView } from 'react-native-webview';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
