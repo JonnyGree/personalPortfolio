@@ -23,9 +23,15 @@ function Main() {
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-        <iframe src="https://www.youtube-nocookie.com/embed/zB8_HbrxUi8?si=LLY_OMTlDVyoxS7c&amp;autoplay=1&controls=0&disablekb=1&loop=1&end=30&modestbranding=1&mute=1" title="YouTube video player" 
-        frameborder="0" width="560" height="315" style={{pointerEvents: 'none'}}> 
-        </iframe>
+
+        <div className="iframe-parent">
+          <div className="transparent-block"></div>
+          <iframe className="iframe-block" src='https://www.youtube-nocookie.com/embed/zB8_HbrxUi8?si=LLY_OMTlDVyoxS7c&amp;autoplay=1&controls=0&disablekb=1&loop=1&end=30&modestbranding=1&mute=1' title="YouTube video player" 
+          > 
+          </iframe>
+        </div> 
+
+        
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
