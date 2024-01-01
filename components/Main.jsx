@@ -1,6 +1,11 @@
-import { useState } from 'react'
+
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import React from 'react'
+import useState from 'react'
+import Text from 'react-native'
+import View from 'react-native'
+// import { WebView } from 'react-native-webview'
 
 function Main() {
   const [count, setCount] = useState(0)
@@ -16,6 +21,22 @@ function Main() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      {/* <WebView
+        javaScriptEnabled={true}
+        domStorageEnabled={true}
+        mediaPlaybackRequiresUserAction={true}
+        style={{ height:180, width:300,alignSelf:"center",alignContent:"center"}}
+        source={{uri: 'https://www.youtube.com/embed/zB8_HbrxUi8?si=goOOXt9yJOCuXFNn' }}
+        /> */}
+
+      {/* <View style={{flex: 1}}>
+          <WebView
+              style={ {  marginTop: (Platform.OS == 'ios') ? 20 : 0,} }
+              javaScriptEnabled={true}
+              domStorageEnabled={true}
+              source={{uri: 'https://www.youtube.com/embed/zB8_HbrxUi8'}}
+          />
+      </View> */}
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -31,7 +52,6 @@ function Main() {
           </iframe>
         </div> 
 
-        
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
