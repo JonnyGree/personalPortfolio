@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
+function Main() {
   const [count, setCount] = useState(0)
 
   return (
@@ -24,6 +23,9 @@ function App() {
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
+        <iframe src="https://www.youtube-nocookie.com/embed/zB8_HbrxUi8?si=LLY_OMTlDVyoxS7c&amp;autoplay=1&controls=0&disablekb=1&loop=1&end=30&modestbranding=1&mute=1" title="YouTube video player" 
+        frameborder="0" width="560" height="315" style={{pointerEvents: 'none'}}> 
+        </iframe>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
@@ -32,4 +34,4 @@ function App() {
   )
 }
 
-export default App
+export default Main
