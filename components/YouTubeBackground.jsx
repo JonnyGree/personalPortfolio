@@ -60,29 +60,45 @@ const YouTubeBackground = ({ videoId }) => {
     };
 
     const onPlayerStateChange = (event) => {
+      let intervalId;
+    
       // Event triggered when video starts playing
       if (event.data === window.YT.PlayerState.PLAYING && !videoStarted) {
         // Set the playback speed (0.5 is half speed, 2 is double speed)
         event.target.setPlaybackRate(0.25);
-
+    
         setVideoStarted(true);
-
+    
         // Hide the loading icon after 4 seconds
         setTimeout(() => {
           setLoadingIconVisible(false);
         }, 4000);
+    
+        // Check remaining time periodically
+        intervalId = setInterval(() => {
+          const remainingTime = event.target.getDuration() - event.target.getCurrentTime();
+          
+          // Check if remaining time is less than or equal to 5 seconds
+          if (remainingTime <= 7) {
+            // Pause the video 5 seconds before the end
+            event.target.pauseVideo();
+            clearInterval(intervalId);
+    
+            // Wait for a moment and then restart the video
+            setTimeout(() => {
+              event.target.seekTo(0);
+              event.target.playVideo();
+            }, 1000);
+          }
+        }, 1000); // Check every second
       }
-
-      // Event triggered when video is about to end
-      if (event.data === window.YT.PlayerState.PLAYING && event.target.getDuration() - event.target.getCurrentTime() <= 10) {
-        // Stop the video 5 seconds before the end
-        event.target.stopVideo();
-      }
-
+    
       // Event triggered when video ends
       if (event.data === window.YT.PlayerState.ENDED) {
         // Restart the video
+        event.target.seekTo(0);
         event.target.playVideo();
+        clearInterval(intervalId); // Clear the interval to stop checking remaining time
       }
     };
 
