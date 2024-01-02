@@ -52,45 +52,23 @@ const YouTubeBackground = ({ videoId }) => {
     };
 
     const onPlayerReady = (event) => {
-      // Autoplay video
+      // Play the video
       event.target.playVideo();
     };
 
     const onPlayerStateChange = (event) => {
       // Event triggered when video starts playing
       if (event.data === window.YT.PlayerState.PLAYING && !videoStarted) {
+        // Set the playback speed (0.5 is half speed, 2 is double speed)
+        event.target.setPlaybackRate(0.5);
+
         setVideoStarted(true);
-        
-        // Set the playback speed after 2 seconds
-        setTimeout(() => {
-          setPlaybackSpeed(videoId, 0.5);
-        }, 2000);
-        
+
         // Hide the loading icon after 4 seconds
         setTimeout(() => {
           setLoadingIconVisible(false);
         }, 4000);
       }
-    };
-
-    const setPlaybackSpeed = (videoId, speed) => {
-      const player = new window.YT.Player('temp-player', {
-        height: 0,
-        width: 0,
-        videoId: videoId,
-        playerVars: {
-          autoplay: 1,
-          controls: 0,
-          enablejsapi: 1,
-          modestbranding: 1,
-          origin: window.location.origin,
-        },
-        events: {
-          'onReady': (event) => {
-            event.target.setPlaybackRate(speed);
-          },
-        },
-      });
     };
 
     loadYouTubeScript();
