@@ -20,7 +20,9 @@
 #root {
   scroll-behavior: smooth;
   background-color: var(--neutral-80);
+  color: var(--white-1);
   /* background: radial-gradient( var(--neutral-80), #505050); */
+  background: linear-gradient(to bottom,  var(--neutral-80), #1d1d1d) fixed; 
 
   --font-size-small: 1rem;
   --font-size-normal: 1.5rem;
@@ -86,7 +88,7 @@ header .site-logo {
 header a {
   margin: 0 1em;
   
-  color: var(--white-1);
+  color: inherit;
   font-family: var(--font-stack);
   font-size: var(--font-size-normal);
 
@@ -146,25 +148,76 @@ footer {
 body::-webkit-scrollbar {
   display: none;
 }
+
+
+/* --------------------------------------- */
+/* --------- Main Components ------------- */
+/* --------------------------------------- */
+.about,
+.contact{
+  color: var(--white);
+  padding: 2em 5em;
+}
+
+h2 {
+  font-size: var(--font-size-large);
+}
+
+h3 {
+  font-size: var(--font-size-medium);
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4.2rem;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid  var(--pink);
+  font-weight: 400;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  background: var(--white);
+  height: 100%;
+  z-index: -1;
+  transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
+}
+
+.btn:hover::after,
+.btn:focus::after {
+  right: 0;
+  background: var(--pink);
+}
+
+.btn--pink {
+  background: var(--pink);
+  transition: all 0.2s;
+}
+
+.btn--pink::after {
+  display: none;
+}
+
+.btn--pink:hover,
+.btn--pink:focus {
+  background: transparent;
+}
+
 /* 
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-.site-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-
-nav {
-  display: flex;
-}
-
-main {
-  margin-bottom: 84px;
 }
 
 .link-button {
