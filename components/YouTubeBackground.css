@@ -1,0 +1,21 @@
+.rotating-image {
+    width: 60%; /* Adjust the initial width of the rotating image */
+    height: 60%; /* Adjust the initial height of the rotating image */
+    animation: pulse 15s infinite ease-in-out; /* Pulsating animation */
+    opacity: 1; /* Initial opacity */
+    transition: opacity 4s ease-in-out; /* Transition for opacity change */
+  }
+  
+  .rotating-image.hidden {
+    opacity: 0; /* Final opacity when hidden */
+    filter: brightness(70%) contrast(150%) grayscale(30%); /* Adjust these values for the desired shading effect */
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1); /* Initial and final scale */
+    }
+    50% {
+      transform: scale(1.1); /* Enlarged scale during the pulse */
+    }
+  }

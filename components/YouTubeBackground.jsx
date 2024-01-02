@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+// import rotatingImage from './assets/react.svg'; 
+import rotatingImage from './assets/logo_8_noBck.svg'; 
+import './YouTubeBackground.css'; // Create a separate CSS file for styling
 
 const YouTubeBackground = ({ videoId }) => {
   const [videoStarted, setVideoStarted] = useState(false);
@@ -60,7 +63,7 @@ const YouTubeBackground = ({ videoId }) => {
       // Event triggered when video starts playing
       if (event.data === window.YT.PlayerState.PLAYING && !videoStarted) {
         // Set the playback speed (0.5 is half speed, 2 is double speed)
-        event.target.setPlaybackRate(0.5);
+        event.target.setPlaybackRate(0.25);
 
         setVideoStarted(true);
 
@@ -96,17 +99,20 @@ const YouTubeBackground = ({ videoId }) => {
       {loadingIconVisible && (
         <div
           id="loading-icon"
+          className={loadingIconVisible ? '' : 'rotating-image.hidden'}
           style={{
             position: 'absolute',
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
             zIndex: 2,
-            color: '#fff',
-            fontSize: '2em',
           }}
         >
-          Loading...
+          <img
+            src={rotatingImage}
+            alt="Rotating Image"
+            className="rotating-image"
+          />
         </div>
       )}
       <div
@@ -123,28 +129,16 @@ const YouTubeBackground = ({ videoId }) => {
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: '#333', // Change this to the color you want for the overlay
+          backgroundColor: '#333',
           zIndex: 1,
-          opacity: loadingIconVisible ? 1 : 0.7,
+          opacity: loadingIconVisible ? 1 : 0.9,
           transition: 'opacity 4s ease-in-out', // Adjust the duration and easing as needed
         }}
-      >
-        <h1 className={"rel ff:alt fs:124fx lh:140fx letter:-0.07em m-b:65fx fs:52fx@m lh:56fx@m h:2.2em! shrink:0 $$34$$ align-x:center@m min-h:3.5em@m! h:auto@m! m-b:15fx@m fs:94fx@ml lh:1.12@ml align-x:center"}>
-          <span>
-            {/* <p>Impossible.<span className={"d:none@m"}>&nbsp;
-            </span><span className={"d:none d:inline@m"}>  
-          </span><em>
-            <strong className={"iblock p-b:0.1em p-x:0.1em fw:400 bg-clip:text c:transparent"} 
-                    style={"background-image:radial-gradient(77.35% 538.53% at 16.63% 71.41%, #E37AD5 0%, #6D8ECF 50.05%, #94B6F9 100%)"}>Maybe.
-            </strong>
-            </em>
-            </p> */}
-            </span>
-            </h1>
-      </div>
+      ></div>
       {/* Other components can be added here if needed */}
     </div>
   );
 };
 
 export default YouTubeBackground;
+
