@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const YouTubeBackground = ({ videoId }) => {
   const [videoStarted, setVideoStarted] = useState(false);
+  const [loadingIconVisible, setLoadingIconVisible] = useState(true);
 
   useEffect(() => {
     const loadYouTubeScript = () => {
@@ -59,6 +60,11 @@ const YouTubeBackground = ({ videoId }) => {
       if (event.data !== 1) {
         // If playback rate is not 1, the video has started
         setVideoStarted(true);
+
+        // Hide the loading icon after 4 seconds
+        setTimeout(() => {
+          setLoadingIconVisible(false);
+        }, 4000);
       }
     };
 
@@ -72,7 +78,7 @@ const YouTubeBackground = ({ videoId }) => {
 
   return (
     <div style={{ position: 'relative' }}>
-      {!videoStarted && (
+      {loadingIconVisible && (
         <div
           id="loading-icon"
           style={{
@@ -99,7 +105,8 @@ const YouTubeBackground = ({ videoId }) => {
           height: '100%',
           backgroundColor: '#333', // Change this to the color you want for the overlay
           zIndex: 1,
-          opacity: 0.7,
+          opacity: loadingIconVisible ? 1 : 0.7,
+          transition: 'opacity 4s ease-in-out', // Adjust the duration and easing as needed
         }}
       ></div>
       {/* Other components can be added here if needed */}
