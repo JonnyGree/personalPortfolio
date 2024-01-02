@@ -115,20 +115,18 @@ footer {
   align-items: center;
   justify-content: center;
 }
-
-footer img {
+  
+/* Default icon styles */
+.footer-icon{
   height: 4rem;
   margin: 1em 2em;
-}
-  
-/* Default styles */
-.footer-icon{
-  transition: fill 0.3s ease; /* Add transition for a smooth effect */
+  fill: white;
 }
 
 /* Hover styles */
 .footer-icon:hover path {
-  fill: orange !important;
+  fill: orange;
+  transition: fill 3s ease-in-out; /* Add transition for a smooth effect */
 }
 
 
