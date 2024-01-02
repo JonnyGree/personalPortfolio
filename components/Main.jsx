@@ -9,9 +9,6 @@ function Main() {
       <div >
           <YouTubeBackground videoId={YOUR_VIDEO_ID}/>
       </div> 
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }

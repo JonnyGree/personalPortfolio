@@ -1,9 +1,12 @@
 .rotating-image {
-    width: 60%; /* Adjust the initial width of the rotating image */
-    height: 60%; /* Adjust the initial height of the rotating image */
+    width: 80%; /* Adjust the initial width of the rotating image */
     animation: pulse 15s infinite ease-in-out; /* Pulsating animation */
     opacity: 1; /* Initial opacity */
     transition: opacity 4s ease-in-out; /* Transition for opacity change */
+
+    display: block;
+    margin: auto;
+    z-index: 10;
   }
   
   .rotating-image.hidden {

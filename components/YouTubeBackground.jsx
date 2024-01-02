@@ -74,7 +74,7 @@ const YouTubeBackground = ({ videoId }) => {
       }
 
       // Event triggered when video is about to end
-      if (event.data === window.YT.PlayerState.PLAYING && event.target.getDuration() - event.target.getCurrentTime() <= 5) {
+      if (event.data === window.YT.PlayerState.PLAYING && event.target.getDuration() - event.target.getCurrentTime() <= 10) {
         // Stop the video 5 seconds before the end
         event.target.stopVideo();
       }

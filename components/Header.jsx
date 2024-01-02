@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom"
 export default function Header() {
 
     return (
+        //position fixed
         <header>
             <Link className="site-logo" to="/">Home</Link>
             <nav>
@@ -24,5 +25,6 @@ export default function Header() {
                 </NavLink>
             </nav>
         </header>
+        //dummy component
     )
 }
