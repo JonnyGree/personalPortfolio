@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 
 function Main() {
   const [count, setCount] = useState(0)
-
+  const YOUR_VIDEO_ID = 'zB8_HbrxUi8'
   return (
     <>
       <div>
@@ -23,10 +23,12 @@ function Main() {
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-
+      
         <div className="iframe-parent">
           <div className="transparent-block"></div>
-          <iframe className="iframe-block" src='https://www.youtube-nocookie.com/embed/zB8_HbrxUi8?si=LLY_OMTlDVyoxS7c&amp;autoplay=1&controls=0&disablekb=1&loop=1&end=30&modestbranding=1&mute=1' title="YouTube video player" 
+          <iframe className="iframe-block" src = {`https://www.youtube.com/embed/${YOUR_VIDEO_ID}?autoplay=1&mute=1&controls=0&loop=1&playlist=${YOUR_VIDEO_ID}&speed=0.25&controls=0`}
+          // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          title="YouTube video player" 
           > 
           </iframe>
         </div> 
