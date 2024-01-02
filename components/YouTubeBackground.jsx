@@ -69,6 +69,18 @@ const YouTubeBackground = ({ videoId }) => {
           setLoadingIconVisible(false);
         }, 4000);
       }
+
+      // Event triggered when video is about to end
+      if (event.data === window.YT.PlayerState.PLAYING && event.target.getDuration() - event.target.getCurrentTime() <= 5) {
+        // Stop the video 5 seconds before the end
+        event.target.stopVideo();
+      }
+
+      // Event triggered when video ends
+      if (event.data === window.YT.PlayerState.ENDED) {
+        // Restart the video
+        event.target.playVideo();
+      }
     };
 
     loadYouTubeScript();
@@ -116,7 +128,20 @@ const YouTubeBackground = ({ videoId }) => {
           opacity: loadingIconVisible ? 1 : 0.7,
           transition: 'opacity 4s ease-in-out', // Adjust the duration and easing as needed
         }}
-      ></div>
+      >
+        <h1 className={"rel ff:alt fs:124fx lh:140fx letter:-0.07em m-b:65fx fs:52fx@m lh:56fx@m h:2.2em! shrink:0 $$34$$ align-x:center@m min-h:3.5em@m! h:auto@m! m-b:15fx@m fs:94fx@ml lh:1.12@ml align-x:center"}>
+          <span>
+            {/* <p>Impossible.<span className={"d:none@m"}>&nbsp;
+            </span><span className={"d:none d:inline@m"}>  
+          </span><em>
+            <strong className={"iblock p-b:0.1em p-x:0.1em fw:400 bg-clip:text c:transparent"} 
+                    style={"background-image:radial-gradient(77.35% 538.53% at 16.63% 71.41%, #E37AD5 0%, #6D8ECF 50.05%, #94B6F9 100%)"}>Maybe.
+            </strong>
+            </em>
+            </p> */}
+            </span>
+            </h1>
+      </div>
       {/* Other components can be added here if needed */}
     </div>
   );
