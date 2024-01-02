@@ -97,7 +97,12 @@ const YouTubeBackground = ({ videoId }) => {
           Loading...
         </div>
       )}
-      <div id="video-container"></div>
+      <div
+        id="video-container"
+        style={{
+          aspectRatio: '16 / 9', // Set the aspect ratio to 16:9 or adjust as needed
+        }}
+      ></div>
       <div
         id="video-overlay"
         style={{
