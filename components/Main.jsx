@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import YouTubeBackground from './YouTubeBackground'
 
 function Main() {
   const [count, setCount] = useState(0)
@@ -32,8 +33,9 @@ function Main() {
           > 
           </iframe>
         </div> 
-
-        
+        <div className="iframe-parent">
+          <YouTubeBackground />
+        </div> 
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
