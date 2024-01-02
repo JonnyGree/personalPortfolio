@@ -33,7 +33,7 @@ function Main() {
           > 
           </iframe>
         </div> 
-        <div className="iframe-parent">
+        <div >
           <YouTubeBackground />
         </div> 
       </div>

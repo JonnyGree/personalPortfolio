@@ -61,7 +61,21 @@ const YouTubeBackground = () => {
   }, []); // Empty dependency array ensures the effect runs once after the initial render
 
   return (
-    <div id="video-container">
+    <div style={{ position: 'relative' }}>
+      <div id="video-container"></div>
+      <div
+        id="video-overlay"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: '#333', // Change this to the color you want for the overlay
+          zIndex: 1,
+          opacity: 0.7,
+        }}
+      ></div>
       {/* Other components can be added here if needed */}
     </div>
   );
