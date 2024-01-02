@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const YouTubeBackground = () => {
+const YouTubeBackground = ({ videoId }) => {
+  const [videoStarted, setVideoStarted] = useState(false);
+
   useEffect(() => {
     const loadYouTubeScript = () => {
       const script = document.createElement('script');
@@ -21,28 +23,29 @@ const YouTubeBackground = () => {
     };
 
     const createYouTubePlayer = () => {
-      new window.YT.Player('video-container', {
+      const player = new window.YT.Player('video-container', {
         height: '100%',
         width: '100%',
-        videoId: 'zB8_HbrxUi8', // Replace with your actual video ID
+        videoId: videoId,
         playerVars: {
           autoplay: 1,
           controls: 0,
           loop: 1,
-          playlist: 'zB8_HbrxUi8', // Replace with your actual video ID
+          playlist: videoId,
           mute: 1,
           start: 0,
-          end: 99999, // A large number to effectively make the video loop
-          iv_load_policy: 3, // Disable video annotations
+          end: 99999,
+          iv_load_policy: 3,
           modestbranding: 1,
           showinfo: 0,
-          fs: 0, // Disable fullscreen button
-          autohide: 0, // Do not hide controls
+          fs: 0,
+          autohide: 0,
           enablejsapi: 1,
           origin: window.location.origin,
         },
         events: {
           'onReady': onPlayerReady,
+          'onPlaybackRateChange': onPlaybackRateChange,
         },
       });
     };
@@ -52,16 +55,39 @@ const YouTubeBackground = () => {
       event.target.setPlaybackRate(0.5);
     };
 
+    const onPlaybackRateChange = (event) => {
+      if (event.data !== 1) {
+        // If playback rate is not 1, the video has started
+        setVideoStarted(true);
+      }
+    };
+
     loadYouTubeScript();
 
     // Cleanup function
     return () => {
       delete window.onYouTubeIframeAPIReady;
     };
-  }, []); // Empty dependency array ensures the effect runs once after the initial render
+  }, [videoId]); // Dependency on videoId ensures the effect runs when videoId changes
 
   return (
     <div style={{ position: 'relative' }}>
+      {!videoStarted && (
+        <div
+          id="loading-icon"
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            zIndex: 2,
+            color: '#fff',
+            fontSize: '2em',
+          }}
+        >
+          Loading...
+        </div>
+      )}
       <div id="video-container"></div>
       <div
         id="video-overlay"

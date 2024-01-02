@@ -34,7 +34,7 @@ function Main() {
           </iframe>
         </div> 
         <div >
-          <YouTubeBackground />
+          <YouTubeBackground videoId={YOUR_VIDEO_ID}/>
         </div> 
       </div>
       <p className="read-the-docs">
