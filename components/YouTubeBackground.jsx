@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import rotatingImage from './assets/logo_8_noBck.svg'; 
 import './YouTubeBackground.css'; // Create a separate CSS file for styling
 
-const YouTubeBackground = ({ videoId }) => {
+const YouTubeBackground = ({ videoId, style }) => {
   const [videoStarted, setVideoStarted] = useState(false);
   const [loadingIconVisible, setLoadingIconVisible] = useState(true);
 
@@ -111,7 +111,7 @@ const YouTubeBackground = ({ videoId }) => {
   }, [videoId]); // Dependency on videoId ensures the effect runs when videoId changes
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={style} className="youtube-background">
       {loadingIconVisible && (
         <div
           id="loading-icon"
