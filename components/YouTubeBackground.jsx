@@ -1,11 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 // import rotatingImage from './assets/react.svg'; 
 import rotatingImage from './assets/logo_8_noBck.svg'; 
 import './YouTubeBackground.css'; // Create a separate CSS file for styling
 
-const YouTubeBackground = ({ videoId, style }) => {
+const YouTubeBackground = ({ videoId }) => {
   const [videoStarted, setVideoStarted] = useState(false);
   const [loadingIconVisible, setLoadingIconVisible] = useState(true);
+  const [iframeDimensions, setIframeDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  const playerRef = useRef(null);
+
 
   useEffect(() => {
     const loadYouTubeScript = () => {
@@ -27,9 +34,9 @@ const YouTubeBackground = ({ videoId, style }) => {
     };
 
     const createYouTubePlayer = () => {
-      const player = new window.YT.Player('video-container', {
-        height: '100%',
-        width: '100%',
+      playerRef.current = new window.YT.Player('video-container', {
+        height: iframeDimensions.height,
+        width: iframeDimensions.width,
         videoId: videoId,
         playerVars: {
           autoplay: 1,
@@ -102,16 +109,42 @@ const YouTubeBackground = ({ videoId, style }) => {
       }
     };
 
+    const calculateDimensions = () => {
+      return window.innerHeight < window.innerWidth
+        ? {
+            width: 1.78 * window.innerHeight,
+            height: window.innerHeight,
+          }
+        : {
+            width: window.innerWidth,
+            height: 0.563 * window.innerWidth,
+          };
+    };
+
+    const handleResize = () => {
+      const newDimensions = calculateDimensions();
+      setIframeDimensions(newDimensions);
+
+      if (playerRef.current) {
+        playerRef.current.setSize(newDimensions.width, newDimensions.height);
+        console.log('resize');
+      } else {
+        console.log('player not init');
+      }
+    };
+
     loadYouTubeScript();
+    window.addEventListener('resize', handleResize);
 
     // Cleanup function
     return () => {
       delete window.onYouTubeIframeAPIReady;
+      window.removeEventListener('resize', handleResize);
     };
-  }, [videoId]); // Dependency on videoId ensures the effect runs when videoId changes
+  }, [iframeDimensions, videoId]); // Dependency on videoId ensures the effect runs when videoId changes
 
   return (
-    <div style={style} className="youtube-background">
+    <div className="youtube-background">
       {loadingIconVisible && (
         <div
           id="loading-icon"
