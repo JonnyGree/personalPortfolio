@@ -7,14 +7,14 @@ export default function Contact() {
             <h2>Get in Touch</h2>
             <div className="contact__info">
             <p>
-            Am finished rejoiced drawings so he elegance. 
-            Set lose dear upon had two its what seen. 
-            Held she sir how know what such whom. 
-            Esteem put uneasy set piqued son depend her others. 
+            Are you in need of a highly efficient and seamlessly automated system to enhance your product or business operations? 
+            Whether you require consultation, have inquiries, wish to provide insights, or simply want to say "Hi 👋," feel free to reach out. 
+            I prioritize prompt responses, and the most expedient method to contact me is through email. 
+            I look forward to assisting you! 😊
             </p>
             {/* Replace the email with yours */}
-            <a href="mailto:you@example.com" className="btn">
-                you@example.com
+            <a href="mailto:sommacalalberto@gmail.com" className="btn">
+                Contact Me
             </a>
             </div>
         </div>

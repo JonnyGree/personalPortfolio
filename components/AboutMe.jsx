@@ -8,18 +8,15 @@ export default function AboutMe() {
             <div className="about__content">
             <div className="about__text">
                 {/* Replace the below paragraph with info about yourself */}
-                
-                Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. 
-                Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an. She projection advantages resolution son indulgence. 
-                
+                    Hello! I'm a Control & Automation Engineer with a focus on software development for manufacturing. 
+                    Specializing in Beckhoff PLC programming, I also bring frontend development skills to craft user-friendly Human-Machine Interfaces. 
+                    My expertise extends to SCADA, database management, and RESTful APIs, ensuring efficient and interconnected automation solutions.               
                 <p />
                 <p>
-                Part sure on no long life am at ever. In songs above he as drawn to. Gay was outlived peculiar rendered led six.
+                Let's collaborate to enhance your manufacturing processes with my technical and creative capabilities.
                 </p>
                 {/* Provide a link to your resume */}
-                <a href="#" className="btn">
-                My Resume
-                </a>
+                <a href="#" className="btn">My Resume</a>
             </div>
             <div className="about__photo-container">
                 {/* Add a nice photo of yourself */}
