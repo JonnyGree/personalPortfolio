@@ -7,16 +7,11 @@ import Footer from "./Footer"
 function Main() {
 
   const YOUR_VIDEO_ID = 'zB8_HbrxUi8'
-  const youtubeBackgroundStyle = {
-    position: 'fixed',
-    top: 0,
-    width: '100%',
-  };
   
   return (
     <>
       <div className="app">         
-          <YouTubeBackground videoId={YOUR_VIDEO_ID} style={youtubeBackgroundStyle}/>
+          <YouTubeBackground videoId={YOUR_VIDEO_ID}/>
           <div className="content">
             <AboutMe />
             <Contact />
