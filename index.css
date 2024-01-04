@@ -68,7 +68,6 @@ header .site-logo {
 }
 
 header a {
-  margin: 0 1em;
   
   color: inherit;
   font-family: var(--font-stack);
@@ -76,7 +75,7 @@ header a {
 
   position: relative;
   display: inline-block;
-  padding: 1rem 0;
+  padding: 0.5em 1em;
   text-decoration: none;
   transition: all .2s;
 }
