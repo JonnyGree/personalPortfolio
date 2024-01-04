@@ -110,7 +110,7 @@ const YouTubeBackground = ({ videoId }) => {
     };
 
     const calculateDimensions = () => {
-      return window.innerHeight < window.innerWidth
+      return 1.77*window.innerHeight > window.innerWidth
         ? {
             width: 1.78 * window.innerHeight,
             height: window.innerHeight,
