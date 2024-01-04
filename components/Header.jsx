@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from "react-router-dom"
-import '../index.css'; // Import your CSS file
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-
+    const [scrolled, setScrolled] = useState(false);
     const toggleMenu = () => {
       setMenuOpen(!menuOpen);
     };
-
-    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
       const handleScroll = () => {
@@ -59,7 +56,7 @@ export default function Header() {
 
         {/* Navigation */}
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
-            <NavLink to="/work">Work</NavLink>
+            <NavLink to="/projects">Projects</NavLink>
             <NavLink to="/about">About Me</NavLink>
             <NavLink to="/contact">Contact</NavLink>
         </nav>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-// import rotatingImage from './assets/react.svg'; 
 import rotatingImage from './assets/logo_8_noBck.svg'; 
 import './YouTubeBackground.css'; // Create a separate CSS file for styling
 
