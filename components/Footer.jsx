@@ -1,5 +1,4 @@
 import React from "react"
-import LinkedinPic from "./assets/linkedin.svg"
 
 export default function Footer() {
     return (

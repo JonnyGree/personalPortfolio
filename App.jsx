@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Header from "./components/Header"
-import Home from "./components/Home";
-import AboutMe from './components/AboutMe'
+import Home from "./components/Home/Home";
+import AboutMe from './components/About/About'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from "./components/Footer"

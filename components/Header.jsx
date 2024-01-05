@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from "react-router-dom"
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
 export default function Header() {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
-    const toggleMenu = () => {
-      setMenuOpen(!menuOpen);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20 ? true : false);
     };
 
-    useEffect(() => {
-      const handleScroll = () => {
-        const isScrolled = window.scrollY > 0;
-        setScrolled(isScrolled);
-      };
-  
-      window.addEventListener('scroll', handleScroll);
-      console.log('scroll event trigger')
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-        console.log('remove scroll event')
-      };
-    }, []);
+    window.addEventListener('scroll', handleScroll);   
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
     const headerStyle = {
         position: 'fixed',
@@ -42,8 +42,13 @@ export default function Header() {
     
 
 
-    return (
-        //position fixed
+  return (
+  <Navbar
+    expanded={menuOpen}
+    fixed="top"
+    expand="md"
+    className={"navbar"}
+  >
         <header style={headerStyle}>
             <Link className="site-logo" to="/">Home</Link>
 
@@ -62,6 +67,6 @@ export default function Header() {
         </nav>
         
         </header>
-        //dummy component
-    )
+  </Navbar>
+  )
 }
