@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 // import rotatingImage from './assets/react.svg'; 
-import rotatingImage from '../assets/pre.svg'; 
+import * as SVGLoaders from 'svg-loaders-react';
 import './YouTubeBackground.css'; // Create a separate CSS file for styling
 
 const YouTubeBackground = ({ videoId }) => {
@@ -131,6 +131,7 @@ const YouTubeBackground = ({ videoId }) => {
       }
     };
 
+
     loadYouTubeScript();
     window.addEventListener('resize', handleResize);
 
@@ -155,10 +156,10 @@ const YouTubeBackground = ({ videoId }) => {
             zIndex: 2,
           }}
         >
-          <img
-            src={rotatingImage}
+          <SVGLoaders.Bars
             alt="Rotating Image"
             className="rotating-image"
+            fill='#555'
           />
         </div>
       )}
