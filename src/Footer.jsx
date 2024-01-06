@@ -6,7 +6,7 @@ const year = date.getFullYear();
 
 function Footer() {
     return (
-      <Container fluid className="footer position-fixed bottom-0">
+      <Container fluid className="footer">
           <div className="row justify-content-center py-4">
                 <div class="col-auto py-2 px-4 ">       
                     <a
@@ -41,9 +41,9 @@ function Footer() {
                     </a>
                 </div>
           </div>
-          <div className="row">
+          <div className="row pb-2">
             <div  className="col-auto">
-                Designed and Developed by Sommacal Alberto
+                Developed by Sommacal Alberto
             </div>
             <div className="col-auto ms-auto">
                 Copyright © {year} SMCA
