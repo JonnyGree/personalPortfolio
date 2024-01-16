@@ -96,13 +96,13 @@ function Techstack() {
           <img src={twincatLogo} alt="Logo" width={100} style={{filter: 'grayscale(1)'}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-      <img src={tia} alt="Logo" width={80} style={{filter: 'grayscale(1)'}}/>
+        <img src={tia} alt="Logo" width={80} style={{filter: 'grayscale(1)'}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-      <img src={step7} alt="Logo" width={60} style={{filter: 'grayscale(1)'}}/>
+        <img src={step7} alt="Logo" width={60} style={{filter: 'grayscale(1)'}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-      <img src={unity} alt="Logo" width={60} style={{filter: 'grayscale(1)'}}/>
+        <img src={unity} alt="Logo" width={60} style={{filter: 'grayscale(1)'}}/>
       </Col>
     </Row>
 
