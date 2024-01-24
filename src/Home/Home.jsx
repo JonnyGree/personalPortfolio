@@ -21,7 +21,7 @@ function Home() {
                 <strong className="color-1"> ALBERTO SOMMACAL</strong>
               </h1>
 
-              <div style={{ padding: 20, textAlign: "left" }}>
+              <div className="h-50 d-inline-block" style={{ padding: 20, textAlign: "left" }}>
                 <Type />
               </div>
             </Col>
@@ -33,8 +33,9 @@ function Home() {
                     gyroscope={true} 
                     tiltMaxAngleX={10} 
                     tiltMaxAngleY={10}
-                    style={{width: '400px'}}>
-                <img src={homeLogo} className="mx-auto d-block img-fluid" alt="avatar" />
+                    style={{width: '400px'}}
+                    className="mx-auto d-block">
+                <img src={homeLogo} className="img-fluid" alt="avatar" />
               </Tilt>
             </Col>  
           </Row>
