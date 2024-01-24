@@ -34,12 +34,11 @@ html{
 .img-fluid{
   border: 8px solid var(--mainColor );
   border-radius: 50%;
-  background-image: url(./asset/profilePic.jpg);
   background-size: cover;
   width: 400px;
   height: 400px;
   opacity: 1;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.6));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.7));
   filter: grayscale(0.5);
 }
 
@@ -145,7 +144,7 @@ html{
   background: linear-gradient(to top, rgba(51, 51, 51, 0.98), rgba(51, 51, 51, 0.5));
 }
 
-.footer .footer-icon:hover{
+.site-icon:hover{
   filter: drop-shadow(0 3px 3px #feffd2) invert(5%);
   transition: all 0.4s !important;
   scale: 1.1;

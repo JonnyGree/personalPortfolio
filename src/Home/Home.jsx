@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../asset/profilePic.jpg";
 import Type from "./Type";
-import Tilt from "react-parallax-tilt";
+import Tilt from 'react-parallax-tilt';
 
 function Home() {
   return (
@@ -27,7 +27,13 @@ function Home() {
             </Col>
 
             <Col md={5}  style={{ paddingBottom: 20 }}>
-              <Tilt>
+              <Tilt glareEnable={true}
+                    glareMaxOpacity={0.4}
+                    glareBorderRadius={"50%"}
+                    gyroscope={true} 
+                    tiltMaxAngleX={10} 
+                    tiltMaxAngleY={10}
+                    style={{width: '400px'}}>
                 <img src={homeLogo} className="mx-auto d-block img-fluid" alt="avatar" />
               </Tilt>
             </Col>  
