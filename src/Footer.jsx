@@ -13,7 +13,7 @@ function Footer() {
                     href="https://www.linkedin.com/in/alberto-sommacal-129846151/"
                     target="_blank" 
                     >
-                        <Linkedin width={30} height={30} fill="white"/>
+                        <Linkedin width={30} height={30} fill="white" className="footer-icon"/>
                     </a>
                 </div>
                 <div class="col-auto py-2 px-4">                
@@ -21,7 +21,7 @@ function Footer() {
                     href="https://github.com/JonnyGree"
                     target="_blank" 
                     >
-                        <Github width={30} height={30} fill="white"/>
+                        <Github width={30} height={30} fill="white" className="footer-icon"/>
                     </a>
                 </div>
                 <div class="col-auto py-2 px-4"> 
@@ -29,7 +29,7 @@ function Footer() {
                     href="mailto:sommacalalberto@gmail.com"
                     target="_blank" 
                     >
-                        <EnvelopeFill width={30} height={30} fill="white"/>
+                        <EnvelopeFill width={30} height={30} fill="white" className="footer-icon"/>
                     </a>
                 </div>
                 <div class="col-auto py-2 px-4"> 
@@ -37,15 +37,15 @@ function Footer() {
                     href="https://www.instagram.com/alberto.sommacal/?hl=en"
                     target="_blank" 
                     >
-                        <Instagram width={30} height={30} fill="white"/>
+                        <Instagram width={30} height={30} fill="white" className="footer-icon"/>
                     </a>
                 </div>
           </div>
           <div className="row pb-3 px-2">
-            <div  className="col-auto">
+            {/* <div  className="col-auto">
                 Developed by Sommacal Alberto
-            </div>
-            <div className="col-auto ms-auto">
+            </div> */}
+            <div className="col-auto mx-auto">
                 Copyright © {year} SMCA
             </div>
         </div>

@@ -7,9 +7,9 @@ import Tilt from "react-parallax-tilt";
 function Home() {
   return (
     <section>
-      <Container style={{marginTop: '10em'}} id="home">
+      <Container style={{marginTop: '10em'}} className="text-center text-md-start px-4" id="home">
           <Row>
-            <Col md={7} className="home-header">
+            <Col md={7} >
               <h1 style={{ paddingBottom: 15 }} className="heading">
                 Hi There!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
@@ -26,9 +26,9 @@ function Home() {
               </div>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
-              <Tilt >
-                <img src={homeLogo} className="img-fluid" alt="avatar" />
+            <Col md={5}  style={{ paddingBottom: 20 }}>
+              <Tilt>
+                <img src={homeLogo} className="mx-auto d-block img-fluid" alt="avatar" />
               </Tilt>
             </Col>  
           </Row>

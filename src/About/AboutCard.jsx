@@ -5,7 +5,7 @@ import { ImPointRight } from "react-icons/im";
 function AboutCard() {
   return (
     <Container style={{marginTop: '10em'}}>
-        <blockquote className="blockquote mx-3">
+        <blockquote className="blockquote px-3">
           <p style={{ textAlign: "justify" }}>
             Hi Everyone, I am <span className="color-1">Alberto Sommacal  </span>
             from <span className="color-1"> Italy.</span>

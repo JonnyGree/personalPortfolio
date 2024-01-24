@@ -72,7 +72,7 @@ function Techstack() {
     <h2 className="text-center my-5">Tools <strong className="color-1">I used </strong></h2>
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <SiSiemens  style={{filter: stackFilter, scale: '1.8'}}/>
+        <SiSiemens  style={{filter: stackFilter, scale: '1.4'}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiSchneiderelectric  style={{filter: stackFilter}}/>
@@ -84,7 +84,7 @@ function Techstack() {
           <img src={AbbLogo} alt="Logo" width={100} style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-          <img src={inductiveAutomation} alt="Logo" width={120} style={{filter: stackFilter, translate: '5px -5px'}}/>
+          <img src={inductiveAutomation} alt="Logo" width={100} style={{filter: stackFilter, translate: '5px -5px'}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
           <img src={influxdb} alt="Logo" width={100} style={{filter: stackFilter}}/>
@@ -99,10 +99,10 @@ function Techstack() {
           <img src={twincatLogo} alt="Logo" width={100} style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={tia} alt="Logo" width={80} style={{filter: stackFilter }}/>
+        <img src={tia} alt="Logo" width={100} style={{filter: stackFilter }}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={step7} alt="Logo" width={60} style={{filter: stackFilter}}/>
+        <img src={step7} alt="Logo" width={80} style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <img src={unity} alt="Logo" width={60} style={{filter: stackFilter, borderRadius: '10%'}}/>
