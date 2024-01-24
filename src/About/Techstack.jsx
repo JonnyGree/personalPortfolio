@@ -23,86 +23,89 @@ import grafana from "../../asset/grafana.png"
 import unity from "../../asset/unity.png"
 import step7 from "../../asset/step7.png"
 import tia from "../../asset/tia.png"
-
+const stackFilter = 'grayscale(1) drop-shadow(3px 3px 3px #dfe228) invert(5%)'
 function Techstack() {
   return (
-    <Container>
-    <h2 className="text-center mt-5 pt-5">Frontend development</h2>
+    <Container className="my-5 py-5">
+    <h1 className="project-heading text-center display-2">
+          Professional <strong className="color-1">Skillset </strong>
+        </h1>  
+    <h2 className="text-center my-5 pt-5">Frontend development</h2>
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <FaHtml5 />
+        <FaHtml5 style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <FaCss3 />
+        <FaCss3 style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiJavascript1 />
+        <DiJavascript1 style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiReact />
+        <DiReact style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <FaBootstrap />
+        <FaBootstrap style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiFirebase />
+        <SiFirebase style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <RiSupabaseFill />
+        <RiSupabaseFill style={{filter: stackFilter}}/>
       </Col>
     </Row>
-    <h2 className="text-center">Desktop development</h2>
+    <h2 className="text-center my-5">Desktop development</h2>
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <TbBrandCSharp />
+        <TbBrandCSharp style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <CgCPlusPlus />
+        <CgCPlusPlus style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
+        <DiPython style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiGit />
+        <DiGit style={{filter: stackFilter}}/>
       </Col>
     </Row>
-    <h2 className="text-center">Brand</h2>
+    <h2 className="text-center my-5">Tools <strong className="color-1">I used </strong></h2>
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <SiSiemens  />
+        <SiSiemens  style={{filter: stackFilter, scale: '1.8'}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiSchneiderelectric  />
+        <SiSchneiderelectric  style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiEpson />
+        <SiEpson style={{filter: stackFilter, scale: '1.4'}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-          <img src={AbbLogo} alt="Logo" width={100} style={{filter: 'grayscale(1)'}}/>
+          <img src={AbbLogo} alt="Logo" width={100} style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-          <img src={inductiveAutomation} alt="Logo" width={100} style={{filter: 'grayscale(1)'}}/>
+          <img src={inductiveAutomation} alt="Logo" width={120} style={{filter: stackFilter, translate: '5px -5px'}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-          <img src={influxdb} alt="Logo" width={100} style={{filter: 'grayscale(1)'}}/>
+          <img src={influxdb} alt="Logo" width={100} style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-          <img src={grafana} alt="Logo" width={100} style={{filter: 'grayscale(1)'}}/>
+          <img src={grafana} alt="Logo" width={100} style={{filter: stackFilter}}/>
       </Col>
     </Row>
-    <h2 className="text-center">Plc Programming</h2>
+    <h2 className="text-center my-5">PLC Programming</h2>
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-          <img src={twincatLogo} alt="Logo" width={100} style={{filter: 'grayscale(1)'}}/>
+          <img src={twincatLogo} alt="Logo" width={100} style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={tia} alt="Logo" width={80} style={{filter: 'grayscale(1)'}}/>
+        <img src={tia} alt="Logo" width={80} style={{filter: stackFilter }}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={step7} alt="Logo" width={60} style={{filter: 'grayscale(1)'}}/>
+        <img src={step7} alt="Logo" width={60} style={{filter: stackFilter}}/>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={unity} alt="Logo" width={60} style={{filter: 'grayscale(1)'}}/>
+        <img src={unity} alt="Logo" width={60} style={{filter: stackFilter, borderRadius: '10%'}}/>
       </Col>
     </Row>
 

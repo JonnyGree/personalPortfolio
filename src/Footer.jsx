@@ -6,7 +6,7 @@ const year = date.getFullYear();
 
 function Footer() {
     return (
-      <Container fluid className="footer">
+      <Container fluid className="footer" style={{marginTop: '8em'}}>
           <div className="row justify-content-center py-4">
                 <div class="col-auto py-2 px-4 ">       
                     <a
@@ -41,7 +41,7 @@ function Footer() {
                     </a>
                 </div>
           </div>
-          <div className="row pb-2">
+          <div className="row pb-3 px-2">
             <div  className="col-auto">
                 Developed by Sommacal Alberto
             </div>

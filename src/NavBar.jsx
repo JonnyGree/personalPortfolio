@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 function NavBar() {
   const [scrolled, setScrolled] = useState(false);
-
+  const [expand, updateExpanded] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20 ? true : false);
@@ -22,20 +22,26 @@ function NavBar() {
 
   return (
     <Navbar 
+        expanded={expand}
         expand="md" 
-        className={` ${scrolled? 'py-2 nav-bar-stick' : 'py-4 nav-bar-transparent' }`}
+        className={` ${ (scrolled) ? 'py-2 nav-bar-stick' : 'py-4 nav-bar-transparent' } ${expand ? 'nav-bar-bg-solid' : ''}`}
         fixed="top"
         id="nav-bar"
         style={{}} /*clear default transition */
         >
       <Container fluid className={`mx-4 fs-5`}>
-        <Navbar.Brand as={Link} to=""> SMCA</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Brand as={Link} to="" onClick={() => updateExpanded(false)}> SMCA</Navbar.Brand>
+        <Navbar.Toggle 
+            aria-controls="responsive-navbar-nav"  
+            onClick={() => {
+            updateExpanded(expand ? false : "expanded");
+          }}
+        />
         <Navbar.Collapse id="responsive-navbar-nav" className="text-center" >
           <Nav className="ms-auto gap-3" >
-            <Nav.Link as={Link} to="about"><Person className="me-1 mb-1"/>About</Nav.Link>
-            <Nav.Link as={Link} to="project"><FileEarmarkBarGraph className="me-1 mb-1"/>Project</Nav.Link>
-            <Nav.Link as={Link} to="contact"><Send className="me-1 mb-1"/>Contact</Nav.Link>
+            <Nav.Link as={Link} to="about" onClick={() => updateExpanded(false)}><Person className="me-1 mb-1"/>About</Nav.Link>
+            <Nav.Link as={Link} to="project" onClick={() => updateExpanded(false)}><FileEarmarkBarGraph className="me-1 mb-1"/>Project</Nav.Link>
+            <Nav.Link as={Link} to="contact" onClick={() => updateExpanded(false)}><Send className="me-1 mb-1"/>Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

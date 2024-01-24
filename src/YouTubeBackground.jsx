@@ -70,7 +70,7 @@ const YouTubeBackground = ({ videoId }) => {
       // Event triggered when video starts playing
       if (event.data === window.YT.PlayerState.PLAYING && !videoStarted) {
         // Set the playback speed (0.5 is half speed, 2 is double speed)
-        event.target.setPlaybackRate(0.25);
+        event.target.setPlaybackRate(0.5);
     
         setVideoStarted(true);
     

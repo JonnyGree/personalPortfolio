@@ -1,3 +1,12 @@
+
+html{
+  --mainColor : #dfe228 ;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 #main{
   background-color: whitesmoke !important;
   position: fixed;
@@ -5,6 +14,39 @@
   width: 100vh;
   height: 100vh;
   overflow: hidden;
+
+}
+
+.color-1{
+  color: var(--mainColor);
+}
+
+.Typewriter__wrapper {
+  font-size: 2.8em !important;
+  color: var(--mainColor) !important;
+  font-weight: 1000 !important;
+}
+.Typewriter__cursor {
+  font-size: 2.4em !important;
+  color:var(--mainColor) !important;
+}
+
+.img-fluid{
+  border: 8px solid var(--mainColor );
+  border-radius: 50%;
+  background-image: url(./asset/profilePic.jpg);
+  background-size: cover;
+  width: 400px;
+  height: 400px;
+  opacity: 1;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.6));
+  filter: grayscale(0.5);
+}
+
+.home-about-body {
+  padding-top: 50px;
+  font-size: 1.2em !important;
+  text-align: left;
 }
 
 /* --------- */
@@ -13,17 +55,19 @@
 .nav-bar-transparent{
   background: transparent !important;
   box-shadow: none;
-  transition: all 1s !important;  /*  todo: fix this - not working */
+  transition: all 0.6s !important;  /*  todo: fix this - not working */
 }
 
 .nav-bar-stick{
-  background: linear-gradient(to bottom, rgba(51, 51, 51, 0.98), rgba(51, 51, 51, 0.7));
+  background: linear-gradient(to bottom, rgba(51, 51, 51, 1), rgba(51, 51, 51, 0.8));
   box-shadow: 0 0.0625rem 0.375rem 0 rgba(0,0,0,.2) ;
-  transition: all 1s !important;
-  background: #4242423b !important;
-  transition: all 0.3s !important;
+  transition: all 0.6s !important;
   box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
-  backdrop-filter: blur(15px) !important;
+  /* backdrop-filter: blur(15px) !important; */
+}
+
+.nav-bar-bg-solid{
+  background: rgba(51, 51, 51, 1) !important
 }
 
 /* --------- */
@@ -43,13 +87,13 @@
   font-size: 1.2rem !important;
 } */
 
-.navbar-toggler {
+/* .navbar-toggler {
   position: relative !important;
   background-color: transparent !important;
   border-color: transparent !important;
 }
-
-.navbar-toggler span {
+*/
+/* .navbar-toggler span {
   display: block !important;
   background-color: #be50f4 !important;
   height: 4px !important;
@@ -59,20 +103,20 @@
   transform: rotate(0deg) !important;
   left: 0 !important;
   opacity: 1 !important;
-}
+}  */
 
-.navbar-toggler:focus,
+/* .navbar-toggler:focus,
 .navbar-toggler:active {
   outline: 0 !important;
 }
-
-.navbar-toggler span:nth-child(1),
+*/
+/* .navbar-toggler span:nth-child(1),
 .navbar-toggler span:nth-child(3) {
   transition: transform 0.35s ease-in-out !important;
   transition: transform 0.35s ease-in-out !important;
-}
+}  */
 
-.navbar-toggler:not(.collapsed) span:nth-child(1) {
+/* .navbar-toggler:not(.collapsed) span:nth-child(1) {
   position: absolute !important;
   left: 12px !important;
   top: 10px !important;
@@ -92,7 +136,7 @@
   top: 10px !important;
   transform: rotate(-135deg) !important;
   opacity: 0.3 !important;
-}
+} */
 
 /* --------- */
 /* Footer */
@@ -109,12 +153,12 @@
   margin: 15px !important;
   padding: 10px !important;
   opacity: 0.93 !important;
-  border: 3px solid rgba(200, 137, 230, 0.637) !important;
+  border: 3px solid rgba(245, 242, 76, 0.747) !important;
   vertical-align: middle !important;
   text-align: center !important;
   border-radius: 5px !important;
   display: table !important;
-  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
+  box-shadow: 4px 4px rgba(165, 168, 4, 0.37) !important;
   overflow: hidden !important;
   transition: all 0.4s ease 0s !important;
 }
@@ -128,7 +172,7 @@
 .tech-icons:hover {
   transform: scale(1.05) !important;
   overflow: hidden !important;
-  border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
+  box-shadow: 4px 4px 4px 4px rgba(165, 168, 4, 0.37) !important;
 }
 .tech-icon-images {
   padding: 20px !important;
@@ -161,4 +205,39 @@ video {
   object-fit: contain;
   overflow-clip-margin: content-box;
   overflow: clip;
+}
+
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.1s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
 }
