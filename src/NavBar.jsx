@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Person, FileEarmarkBarGraph, Send} from 'react-bootstrap-icons';
+import { House, Person, FileEarmarkBarGraph, Send} from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -30,7 +30,7 @@ function NavBar() {
         style={{}} /*clear default transition */
         >
       <Container fluid className={`mx-4 fs-5`}>
-        <Navbar.Brand className="site-icon"as={Link} to="" onClick={() => updateExpanded(false)}> SMCA</Navbar.Brand>
+        <Navbar.Brand className="site-icon"as={Link} to="" onClick={() => updateExpanded(false)}><House className="me-1 mb-1"/> SMCA</Navbar.Brand>
         <Navbar.Toggle 
             aria-controls="responsive-navbar-nav"  
             onClick={() => {
