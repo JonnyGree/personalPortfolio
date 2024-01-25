@@ -3,13 +3,14 @@ import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../asset/profilePic.jpg";
 import Type from "./Type";
 import Tilt from 'react-parallax-tilt';
+import {BrowserView, MobileView} from 'react-device-detect';
 
 function Home() {
   return (
     <section>
-      <Container style={{marginTop: '10em'}} className="text-center text-md-start px-4" id="home">
-          <Row>
-            <Col md={7} >
+      <Container style={{marginTop: '10em'}} className="container-md text-center text-md-start" id="home">
+          <Row >
+            <Col>
               <h1 style={{ paddingBottom: 15 }} className="heading">
                 Hi There!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
@@ -27,6 +28,7 @@ function Home() {
             </Col>
 
             <Col md={5}  style={{ paddingBottom: 20 }}>
+              <BrowserView>
               <Tilt glareEnable={true}
                     glareMaxOpacity={0.4}
                     glareBorderRadius={"50%"}
@@ -37,6 +39,10 @@ function Home() {
                     className="mx-auto d-block">
                 <img src={homeLogo} className="img-fluid" alt="avatar" />
               </Tilt>
+              </BrowserView>
+              <MobileView>
+                <img src={homeLogo} className="mx-auto d-block img-fluid img-fluid-mobile" alt="avatar" />
+            </MobileView>
             </Col>  
           </Row>
           <Row style={{marginTop: '10%'}}>
