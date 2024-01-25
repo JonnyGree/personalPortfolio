@@ -177,6 +177,11 @@ html{
   .tech-icons {
     margin: 10px !important;
   }
+  .Typewriter__wrapper,
+  .Typewriter__cursor {
+    font-size: 1.4em !important;
+  }
+  . 
 }
 
 .tech-icons:hover {
